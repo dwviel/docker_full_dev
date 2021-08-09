@@ -14,4 +14,5 @@ Run container:
 docker run -it --rm --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -P -p 127.0.0.1:8022:22 -h full_dev:0.1 full_dev:0.1
 * port is 8022 from host machine. Change as needed for actual host.
 
-
+To access from host:
+ssh -X fulldev@localhost -p 8022
