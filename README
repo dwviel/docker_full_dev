@@ -16,3 +16,9 @@ docker run -it --rm --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -P -p
 
 To access from host:
 ssh -X fulldev@localhost -p 8022
+Password: fulldev
+
+Ensure X11 is working:
+run in container: xeyes
+Should see on host machine display.
+
