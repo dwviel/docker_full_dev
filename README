@@ -1,0 +1,17 @@
+Build and run full development environment docker container.
+
+Emacs and VIM are currently supported. Add other development tools to Dockerfile as needed.
+
+Allows for ssh into docker container and display of X11 from container to host machine. Similar to ssh to a VM for development.
+
+Container has permissions to allow http and https out to repos. All artifacts should be persisted to a repo and the container viewed as evanescent.
+
+
+Build container:
+docker build -f Dockerfile -t full_dev:0.1 .
+
+Run container:
+docker run -it --rm --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -P -p 127.0.0.1:8022:22 -h full_dev:0.1 full_dev:0.1
+* port is 8022 from host machine. Change as needed for actual host.
+
+
